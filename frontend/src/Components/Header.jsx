@@ -10,10 +10,10 @@ const Header = () => {
     console.log(cartItems);
     return (
         <header className="header">
-            <Navbar bg='light' expand='md' collapseOnSelect>
+            <Navbar bg='light' expand='md' collapseOnSelect className="navbar">
                 <Container>
-                    <LinkContainer to='/'>
-                        <Navbar.Brand>
+                    <LinkContainer to='/' className="linkcontainer">
+                        <Navbar.Brand style={{color: 'white'}}>
                         {/* <img src='./Components_Css/libertypark.ico' alt='Liberty Park Amusement' /> */}
                             Liberty Park Amusement
                         </Navbar.Brand>
@@ -23,9 +23,9 @@ const Header = () => {
                         <Navbar.Collapse id='basic-navbar-nav'>
                             <Nav className='ms-auto'>
 
-                                <LinkContainer to='/cart'>
-                                    <Nav.Link>
-                                        <FaShoppingCart /> Cart
+                                <LinkContainer to='/cart' className="linkcontainer">
+                                    <Nav.Link >
+                                        <FaShoppingCart style={{color: 'white'}}/> Cart
                                         {cartItems.length > 0 && (
                                     <Badge pill bg='success' style={{ marginLeft: '5px' }}>
                                         {cartItems.reduce((a, c) => a + c.qty, 0)}
@@ -34,7 +34,7 @@ const Header = () => {
                                     </Nav.Link>
                                 </LinkContainer>
 
-                                <LinkContainer to='/login'>
+                                <LinkContainer to='/login' className="linkcontainer">
                                     <Nav.Link href='/login'>
                                         <FaUser /> Login
                                     </Nav.Link>

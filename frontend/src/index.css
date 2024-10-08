@@ -1,6 +1,10 @@
 main {
     min-height: 80vh;
   }
+
+  body {
+    background-color: #cc2a2a;
+  }
   
   .rating span {
     margin: 0.1rem;

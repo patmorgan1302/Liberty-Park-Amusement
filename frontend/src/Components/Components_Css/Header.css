@@ -1,12 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 .header {
-    /* display: flex; */
+    color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #c6c6c6;
-    -webkit-box-shadow: 8px 8px 8px rgb(98, 98, 98);
-    -moz-box-shadow:    8px 8px 8px rgb(143, 143, 143);
-    box-shadow:         8px 8px 8px rgb(213, 213, 213);
-    z-index:999;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; 
+    /* padding: 1rem 2rem; */
+    /* background: rgb(255,0,0);
+    background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,33,0,1) 0%, rgba(0,0,0,1) 98%); */
+    border-bottom: 2px solid #c6c6c6;
+    
 }
+
+.navbar {
+    /* max-height: 60px; */
+    background: rgb(204,178,70);
+    background: radial-gradient(circle, rgba(204,178,70,1) 0%, rgba(255,227,107,1) 0%, rgba(255,175,125,1) 100%);
+    color: white;
+}
+
+.linkcontainer{ 
+    color: rgba(58, 21, 21, 0.944);
+    
+};
+
