@@ -1,4 +1,4 @@
-import { Row, Col, Image } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Product from '../Components/Product';
 import Loader from '../Components/Loader';
 import Message from '../Components/Message';
@@ -18,9 +18,6 @@ const HomeScreen = () => {
                 <Message variant='danger'>{ error?.data?.message || error.error} </Message>
             ) : (
            <>
-            <div>
-                <Image src={'./LibertyParkAd.jpg'}/>
-            </div>
             <div>
                 <h1>Latest Products</h1>
                 <Row>

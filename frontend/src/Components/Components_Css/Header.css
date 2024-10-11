@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 .header {
-    color: white;
+    color: rgb(0, 0, 0);
     justify-content: space-between;
     align-items: center;
     font-family: "Work Sans", sans-serif;
@@ -19,7 +19,7 @@
     /* max-height: 60px; */
     background: rgb(204,178,70);
     background: radial-gradient(circle, rgba(204,178,70,1) 0%, rgba(255,227,107,1) 0%, rgba(255,175,125,1) 100%);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .linkcontainer{ 
