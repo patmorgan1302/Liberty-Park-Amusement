@@ -28,15 +28,15 @@ const Header = () => {
   }
     return (
         <header>
-      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect={true} >
         <Container>
-          <Navbar.Brand as={Link} to='/' style={{ color: 'black'} }>
+          <Navbar.Brand eventkey="3" as={Link} to='/' style={{ color: 'black'} }>
             Liberty Park Amusement
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav' >
             <Nav className='ms-auto'>
-              <Nav.Link as={Link} to='/cart' style={{ color: 'black'}}>
+              <Nav.Link eventkey="1" as={Link} to='/cart' style={{ color: 'black'}}>
                 <FaShoppingCart /> Cart
                 {cartItems.length > 0 && (
                   <Badge pill bg='success' style={{ marginLeft: '5px' }}>
@@ -47,16 +47,16 @@ const Header = () => {
               {userInfo ? (
                 <>
                   <NavDropdown title={userInfo.name} id='username' style={{ color: 'black'}}>
-                    <NavDropdown.Item as={Link} to='/profile' style={{ color: 'black'}}>
+                    <NavDropdown.Item eventkey="2"as={Link} to='/profile' style={{ color: 'black'}}>
                       Profile
                     </NavDropdown.Item>
-                    <NavDropdown.Item to='/login' onClick={logoutHandler} style={{ color: 'black'}}>
+                    <NavDropdown.Item eventkey="5"to='/login' onClick={logoutHandler} style={{ color: 'black'}}>
                       Logout
                     </NavDropdown.Item>
                   </NavDropdown>
                 </>
               ) : (
-                <Nav.Link as={Link} to='/login' style={{ color: 'black'}}>
+                <Nav.Link eventkey="4"as={Link} to='/login' style={{ color: 'black'}}>
                   <FaUser /> Sign In
                 </Nav.Link>
               )}

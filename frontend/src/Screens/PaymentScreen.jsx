@@ -6,7 +6,7 @@ import FormContainer from '../Components/FormContainer';
 import CheckoutSteps from '../Components/CheckoutSteps';
 import { savePaymentMethod } from '../Slices/cartSlice';
 
-const PaymentScreen = ({  }) => {
+const PaymentScreen = () => {
     const [paymentMethod, setPaymentMethod] = useState('PayPal');
 
     const navigate = useNavigate();
