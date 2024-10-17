@@ -3,10 +3,6 @@ import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
 
 
-// @desc Auth a User
-// @router POST /api/users/login
-// @access Public 
-
 const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
@@ -27,9 +23,6 @@ const authUser = asyncHandler(async (req, res) => {
     }
 });
 
-// @desc Register User
-// @router POST /api/users
-// @access Public 
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email , password } = req.body;
@@ -62,9 +55,6 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 });
 
-// @desc Logout User
-// @router POST /api/users/logout
-// @access Public 
 
 const logoutUser = asyncHandler(async (req, res) => {
     res.cookie('jwt', '', {
@@ -75,9 +65,6 @@ const logoutUser = asyncHandler(async (req, res) => {
     res.status(200).json({ message: 'Logged Out Successfully'})
 });
 
-// @desc Get User Profile
-// @router Get /api/products
-// @access Private 
 
 const getUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
@@ -95,9 +82,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
     }
 });
 
-// @desc GEt user prfolie
-// @router Get /api/users/prfile
-// @access Private
 
 const updateUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
@@ -122,35 +106,63 @@ const updateUserProfile = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("User Not Found");
     }
-
 });
-
-// @desc Get uSers
-// @router PUT /api/products
-// @access Private/admin 
+ 
 
 const getUsers = asyncHandler(async (req, res) => {
-    res.send('get users');
+    const users = await User.find({});
+    res.json(users);
 });
+
 
 const getUserByID = asyncHandler(async (req, res) => {
-    res.send('get user by id');
+    const user = await User.findById(req.params.id).select('-password');
+
+    if (user) {
+        res.status(200).json(user);
+    } else {
+        res.status(404);
+        throw new Error(' User Not FOund')
+    }
 });
 
-// @desc Fetch all Products
-// @router DELETE /api/user/:id
-// @access Public/admin
 
 const deleteUser = asyncHandler(async (req, res) => {
-    res.send('delete user');
+    const user = await User.findById(req.params.id);
+
+    if(user) {
+        if(user.isAdmin) {
+            res.status(400);
+            throw new Error('You cannot delete an Admin');
+        } 
+        await User.deleteOne({ _id: user._id });
+        res.status(200).json({ message: 'User Deleted'});
+    } else {
+        res.status(404);
+        throw new Error('User Not Found');
+    }
 });
 
-// @desc Update User
-// @router Get /api/user/:id
-// @access Private/admin
 
 const updateUser = asyncHandler(async (req, res) => {
-    res.send('update user');
+    const user = await User.findById(req.params.id);
+
+    if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.isAdmin = Boolean(req.body.isAdmin);
+
+    const updatedUser = await user.save();
+
+    res.status(200).json({
+        _id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        isAdmin: updatedUser.isAdmin,
+    });
+    } else {
+        res.send(404).json('Update Failed')
+    }
 });
 
 
