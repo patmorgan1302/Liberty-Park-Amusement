@@ -9,7 +9,6 @@ import {
 import { Provider } from 'react-redux';
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';  
-import './bootstrap.custom.css'
 import './index.css';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import HomeScreen from './Screens/HomeScreen';

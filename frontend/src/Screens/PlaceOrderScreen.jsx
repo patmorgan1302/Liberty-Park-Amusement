@@ -15,7 +15,7 @@ const PlaceOrderScreen = () => {
 
     const cart = useSelector(state => state.cart);
 
-    const [createOrder, { isLoading, error }] = useCreateOrderMutation();
+    const [createOrder, { isLoading }] = useCreateOrderMutation();
 
     useEffect(() => {
         if (!cart.paymentMethod) {
@@ -48,7 +48,8 @@ const PlaceOrderScreen = () => {
         <CheckoutSteps step1 step2 step3 step4 />
         <Row>
             <Col md={8}>
-                <ListGroup variant='flush'>
+                <Card>
+                <ListGroup variant='flush' rounded>
                     <ListGroupItem>
                         <h2>Shipping</h2>
                         <p>
@@ -97,6 +98,7 @@ const PlaceOrderScreen = () => {
                         )}
                     </ListGroup.Item>
                 </ListGroup>
+                </Card>
             </Col>
             <Col md={4}>
                 <Card>
@@ -131,9 +133,9 @@ const PlaceOrderScreen = () => {
                             </Row>
                         </ListGroup.Item>
 
-                        <ListGroup.Item>
+                        {/* <ListGroup.Item>
                             { error && <Message variage='danger'>{error}</Message>}
-                        </ListGroup.Item>
+                        </ListGroup.Item> */}
 
                         <ListGroup.Item>
                         <Button

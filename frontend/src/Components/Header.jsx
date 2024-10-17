@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, NavDropdown, Badge } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown, Badge, Image } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useLogoutMutation } from '../Slices/usersApiSlice';
@@ -28,10 +28,11 @@ const Header = () => {
   }
     return (
         <header>
-      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect={true} >
+      <Navbar className='header' bg='info' variant='dark' expand='lg' collapseOnSelect={true} >
         <Container>
-          <Navbar.Brand eventkey="3" as={Link} to='/' style={{ color: 'black'}}>
-            Liberty Park Amusement
+          <Navbar.Brand eventkey="3" as={Link} to='/' style={{ color: 'white', textAlign: 'center'}}>
+            <Image src='/images/libertypark.jpeg' alt='logo' style={{ width: '190px', height: '130px', marginRight: '10px' }} rounded/>
+            {/* Liberty Park Amusement */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav' >

@@ -1,32 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .header {
-    color: rgb(0, 0, 0);
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Work Sans", sans-serif;
-    font-optical-sizing: auto;
+    font-family: "Kanit", sans-serif;
     font-weight: 500;
     font-style: normal; 
-    /* padding: 1rem 2rem; */
-    /* background: rgb(255,0,0);
-    background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,33,0,1) 0%, rgba(0,0,0,1) 98%); */
-    border-bottom: 2px solid #5f5858;
-    
-}
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(250, 128, 6, 0.859) 0%, rgba(34, 44, 8, 0.916) 100%);
 
-.navbar {
-    /* max-height: 60px; */
-    background: rgb(136, 136, 136);
-    background: radial-gradient(circle, rgb(191, 191, 191) 0%, rgb(183, 183, 183) 0%, rgb(142, 142, 142) 100%);
-    color: rgb(0, 0, 0);
-}
-
-.linkcontainer{ 
-    color: rgba(0, 0, 0, 0.944);
-    
 };
-
-#username {
-    color: 'black';
-}
