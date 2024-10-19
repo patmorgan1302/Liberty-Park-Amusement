@@ -28,11 +28,10 @@ const Header = () => {
   }
     return (
         <header>
-      <Navbar className='header' bg='info' variant='dark' expand='lg' collapseOnSelect={true} >
+      <Navbar className='header' variant='dark' expand='lg' collapseOnSelect={true} >
         <Container>
           <Navbar.Brand eventkey="3" as={Link} to='/' style={{ color: 'white', textAlign: 'center'}}>
             <Image src='/images/libertypark.jpeg' alt='logo' style={{ width: '190px', height: '130px', marginRight: '10px' }} rounded/>
-            {/* Liberty Park Amusement */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav' >
