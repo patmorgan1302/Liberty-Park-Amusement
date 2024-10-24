@@ -234,7 +234,7 @@ const OrderScreen = () => {
                                 !order.isDelivered && (
                                     <ListGroup.Item>
                                         <Button type='button' className='btn btn-block' 
-                                        onClick={deliverOrderHandler}>Mark As Delivered</Button>
+                                        onClick={deliverOrderHandler}>Mark As Completed</Button>
                                     </ListGroup.Item>
                                     )}
                                 </ListGroup>

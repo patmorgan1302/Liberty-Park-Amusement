@@ -1,11 +1,10 @@
-import { Row, Col, Container, Image } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 import Product from '../Components/Product';
 import Loader from '../Components/Loader';
 import Message from '../Components/Message';
-// import LibertyPark from './libertypark.jpeg';
-import FallFrenzy from './FallFrenzy.png';
+import GHOST from './GHOST.jpg';
 import { useGetProductsQuery } from '../Slices/productsApiSlice';
-import styles from './HomeScreen.css';
+import ProductCarousel from '../Components/ProductCarousel';
 
 
 const HomeScreen = () => {
@@ -22,19 +21,26 @@ const HomeScreen = () => {
             ) : (
             <>
                 <Row>
-                    <Image src={FallFrenzy} alt='Liberty Park' fluid />
+                    <Image src={GHOST} alt='Liberty Park' fluid />
+                </Row>
+                <Row className='my-4'>
+                    <Col>
+                    <h1 style={{
+                                marginTop: '45px',
+                                marginBottom: '25px',
+                                color: '#6d6d6d',
+                                fontSize: '2rem',
+                                textDecoration: 'underline',
+                                textShadow: '1px 1px 2px #faf73c'
+                            }}>Featured Menu Items</h1>
+                    <ProductCarousel />
+                    </Col>
+                        
                 </Row>
                 <Row>
                     <Col>
                         <div >
-                            <h1 style={{
-                                marginTop: '45px',
-                                color: '#fff2e6',
-                                textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
-                                textDecoration: 'underline'
-
-
-                            }}>Latest Products</h1>
+                            
                             <Row>
                                 {products.map((product) => (
                                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

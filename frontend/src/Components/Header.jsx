@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container, NavDropdown, Badge, Image } from 'react-bootstrap';
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaGhost } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useLogoutMutation } from '../Slices/usersApiSlice';
 import { logout } from '../Slices/authSlice';
@@ -33,10 +33,11 @@ const Header = () => {
           <Navbar.Brand eventkey="3" as={Link} to='/' style={{ color: 'white', textAlign: 'center'}}>
             <Image src='/images/libertypark.jpeg' alt='logo' style={{ width: '190px', height: '130px', marginRight: '10px' }} rounded/>
           </Navbar.Brand>
+          <FaGhost  style={{ color: 'yellow', marginRight: '187px', height: '30px', width: '100px'}}/>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav' >
             <Nav className='ms-auto'>
-              <Nav.Link eventkey="1" as={Link} to='/cart' >
+                <Nav.Link eventkey="1" as={Link} to='/cart' style={{ color: 'yellow'}}>
                 <FaShoppingCart /> Cart
                 {cartItems.length > 0 && (
                   <Badge pill bg='success' style={{ marginLeft: '5px' }}>
@@ -45,19 +46,19 @@ const Header = () => {
                 )}
               </Nav.Link>
               {userInfo? (
-                <>
-                  <NavDropdown title={userInfo.name} id='username'>
+                <>      
+                <NavDropdown title={userInfo.name} id='username' >
                     <NavDropdown.Item eventkey="2"as={Link} to='/profile' >
                       Profile
                     </NavDropdown.Item>
                     <NavDropdown.Item eventkey="5"to='/login' onClick={logoutHandler}>
                       Logout
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown>                 
                 </>
               ) : (
-                <LinkContainer eventkey='6' to='/login' >
-                   <Nav.Link eventkey="4"as={Link} to='/login' >
+                <LinkContainer eventkey='6' to='/login' style={{ color: 'yellow'}} >
+                   <Nav.Link eventkey="4" as={Link} to='/login'  >
                       <FaUser /> Sign In
                   </Nav.Link>
                 </LinkContainer>
